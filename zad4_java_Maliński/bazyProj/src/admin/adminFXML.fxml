@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <TabPane prefHeight="622.0" prefWidth="956.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="produkty_tab" text="Produkty">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0">
+                     <children>
+                        <HBox layoutX="280.0" layoutY="1.0" prefHeight="543.0" prefWidth="516.0">
+                           <children>
+                              <TableView fx:id="listOfProducts" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="655.0">
+                                <columns>
+                                  <TableColumn fx:id="idColumn" prefWidth="79.0" text="Numer" />
+                                  <TableColumn fx:id="nazwaColumn" prefWidth="77.0" text="Nazwa" />
+                                    <TableColumn fx:id="cenaColumn" prefWidth="124.0" text="Cena" />
+                                    <TableColumn fx:id="dostColumn" prefWidth="100.0" text="Dostępność" />
+                                    <TableColumn fx:id="opisColumn" prefWidth="142.0" text="Opis" />
+                                    <TableColumn fx:id="prodColumn" prefWidth="132.0" text="Producent" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="2.0" prefHeight="509.0" prefWidth="279.0">
+                           <children>
+                              <TextField fx:id="idField" disable="true" prefHeight="41.0" prefWidth="279.0" promptText="ID">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="nazwaField" prefHeight="41.0" prefWidth="279.0" promptText="nazwa">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="cenaField" prefHeight="41.0" prefWidth="279.0" promptText="cena">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="dostField" prefHeight="43.0" prefWidth="223.0" promptText="Dostępność">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="opisField" prefHeight="41.0" promptText="opis">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </TextField>
+                              <TextField fx:id="prodField" prefHeight="41.0" promptText="producent nazwa">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="addStudentButton" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addProdukt" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: #F6F6F6; -fx-border-color: #d8d8d8;" text="Wyczyść formularz">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="editProduktBtn" mnemonicParsing="false" onAction="#editProdukt" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #ffaf4f;" text="Edytuj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteProdukt" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #ff4f4f;" text="Usuń" textFill="WHITE">
+                                 <opaqueInsets>
+                                    <Insets left="10.0" right="10.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="listAllProduktBtn" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#loadProduktData" style="-fx-background-color: #4fb2ff;" text="Załaduj liste produktow">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="kat_tab" text="Kategorie">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0">
+                     <children>
+                        <HBox layoutX="280.0" layoutY="1.0" prefHeight="543.0" prefWidth="516.0">
+                           <children>
+                              <TableView fx:id="listOfKat" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="655.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumnKat" prefWidth="79.0" text="Numer" />
+                                    <TableColumn fx:id="nazwaColumnKat" prefWidth="77.0" text="Nazwa" />
+                                    <TableColumn fx:id="opisColumnKat" prefWidth="124.0" text="opis" />
+                                    <TableColumn fx:id="modColumnKat" prefWidth="100.0" text="modyfikacja" />
+                                    <TableColumn fx:id="dataColumnKat" prefWidth="142.0" text="data" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="2.0" prefHeight="509.0" prefWidth="279.0">
+                           <children>
+                              <TextField fx:id="idField1" disable="true" prefHeight="41.0" prefWidth="279.0" promptText="ID">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="nazwaFieldKat" prefHeight="41.0" prefWidth="279.0" promptText="nazwa">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="opisFieldKat" prefHeight="41.0" prefWidth="279.0" promptText="opis">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="modyfikacjaFieldKat" prefHeight="43.0" prefWidth="223.0" promptText="modyfikacja">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <DatePicker fx:id="dataFieldKat" prefHeight="25.0" prefWidth="238.0" promptText="data">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button fx:id="addStudentButton1" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addKategoria" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#clearKatField" style="-fx-background-color: #F6F6F6; -fx-border-color: #d8d8d8;" text="Wyczyść formularz">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="editProduktBtn1" mnemonicParsing="false" onAction="#editKat" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #ffaf4f;" text="Edytuj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteKategoria" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #ff4f4f;" text="Usuń" textFill="WHITE">
+                                 <opaqueInsets>
+                                    <Insets left="10.0" right="10.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="listKatBtn" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#loadKatData" style="-fx-background-color: #4fb2ff;" text="Załaduj kategorie">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="prodKatTab" text="Kat Produktu">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0">
+                     <children>
+                        <HBox layoutX="280.0" layoutY="1.0" prefHeight="543.0" prefWidth="516.0">
+                           <children>
+                              <TableView fx:id="listOfProdKat" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="655.0">
+                                 <columns>
+                                    <TableColumn fx:id="prodColumnKP" prefWidth="242.0" text="produkt" />
+                                    <TableColumn fx:id="katColumnKP" prefWidth="242.0" text="kategoria" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="2.0" prefHeight="509.0" prefWidth="279.0">
+                           <children>
+                              <TextField fx:id="idFieldKP" prefHeight="41.0" prefWidth="279.0" promptText="kategoria">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="id2FieldKP" prefHeight="41.0" prefWidth="279.0" promptText="produkt">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="addStudentButton2" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addKatProd" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#clearKatProdField" style="-fx-background-color: #F6F6F6; -fx-border-color: #d8d8d8;" text="Wyczyść formularz">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="editProduktBtn2" mnemonicParsing="false" onAction="#ediProdtKat" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #ffaf4f;" text="Edytuj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteKategoriaProduktu" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #ff4f4f;" text="Usuń" textFill="WHITE">
+                                 <opaqueInsets>
+                                    <Insets left="10.0" right="10.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="listAllProdKatBtn" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#loadKatProdData" style="-fx-background-color: #4fb2ff;" text="Załaduj liste">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="producentTab" text="Producent">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0">
+                     <children>
+                        <HBox layoutX="280.0" layoutY="1.0" prefHeight="543.0" prefWidth="516.0">
+                           <children>
+                              <TableView fx:id="listOfProducents" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="655.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumnPr" prefWidth="79.0" text="Numer" />
+                                    <TableColumn fx:id="nazwaColumnPr" prefWidth="123.0" text="Nazwa" />
+                                    <TableColumn fx:id="imieColumnPr" prefWidth="128.0" text="imie" />
+                                    <TableColumn fx:id="nazwiskoColumnPr" prefWidth="140.0" text="nazwisko" />
+                                    <TableColumn fx:id="dodInfColumnPr" prefWidth="184.0" text="Opis" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="2.0" prefHeight="509.0" prefWidth="279.0">
+                           <children>
+                              <TextField fx:id="idFieldPr" disable="true" prefHeight="41.0" prefWidth="279.0" promptText="ID">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="nazwaFieldPr" prefHeight="41.0" prefWidth="279.0" promptText="nazwa">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="imieFieldPr" prefHeight="41.0" prefWidth="279.0" promptText="imie">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="nazwiskoFieldPr" prefHeight="43.0" prefWidth="223.0" promptText="nazwisko">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="dodInfFieldPr" prefHeight="41.0" promptText="dodatkowe informacje">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </TextField>
+                              <Button fx:id="addStudentButton3" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addProduc" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#clearProducFields" style="-fx-background-color: #F6F6F6; -fx-border-color: #d8d8d8;" text="Wyczyść formularz">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="editProduktBtn3" mnemonicParsing="false" onAction="#editProduc" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #ffaf4f;" text="Edytuj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteProduc" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #ff4f4f;" text="Usuń" textFill="WHITE">
+                                 <opaqueInsets>
+                                    <Insets left="10.0" right="10.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="listAllPrBtn" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#loadProducData" style="-fx-background-color: #4fb2ff;" text="Załaduj liste">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pracownikTab" text="Pracownik">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0">
+                     <children>
+                        <HBox layoutX="280.0" layoutY="1.0" prefHeight="543.0" prefWidth="516.0">
+                           <children>
+                              <TableView fx:id="listOfPrac" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="655.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumnPrac" prefWidth="79.0" text="Numer" />
+                                    <TableColumn fx:id="imieColumnPrac" prefWidth="123.0" text="imie" />
+                                    <TableColumn fx:id="nazwiskoColumnPrac" prefWidth="128.0" text="nazwisko" />
+                                    <TableColumn fx:id="dataColumnPrac" prefWidth="140.0" text="data urodzenia" />
+                                    <TableColumn fx:id="peselColumnPrac" prefWidth="184.0" text="pesel" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="2.0" prefHeight="509.0" prefWidth="279.0">
+                           <children>
+                              <TextField fx:id="idFieldPrac" disable="true" prefHeight="41.0" prefWidth="279.0" promptText="ID">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="imieFieldPrac" prefHeight="41.0" prefWidth="279.0" promptText="imie">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="nazwiskoFieldPrac" prefHeight="41.0" prefWidth="279.0" promptText="nazwisko">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="dataFieldPrac" prefHeight="43.0" prefWidth="223.0" promptText="data_urodzenia">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="peselFieldPrac" prefHeight="41.0" promptText="pesel">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </TextField>
+                              <Button fx:id="addStudentButton31" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addPrac" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#clearPracFields" style="-fx-background-color: #F6F6F6; -fx-border-color: #d8d8d8;" text="Wyczyść formularz">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="editProduktBtn31" mnemonicParsing="false" onAction="#editPrac" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #ffaf4f;" text="Edytuj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deletePrac" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #ff4f4f;" text="Usuń" textFill="WHITE">
+                                 <opaqueInsets>
+                                    <Insets left="10.0" right="10.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="listAllPracBtn" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#loadPracData" style="-fx-background-color: #4fb2ff;" text="Załaduj liste">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="kontaktTab" text="kontakt">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="349.0">
+                     <children>
+                        <HBox layoutX="280.0" layoutY="1.0" prefHeight="543.0" prefWidth="516.0">
+                           <children>
+                              <TableView fx:id="listOfKon" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="655.0">
+                                 <columns>
+                                    <TableColumn fx:id="idColumnK" prefWidth="79.0" text="Numer" />
+                                    <TableColumn fx:id="telColumnK" prefWidth="123.0" text="telefon" />
+                                    <TableColumn fx:id="emailColumnK" prefWidth="128.0" text="email" />
+                                    <TableColumn fx:id="prodColumnK" prefWidth="140.0" text="producent" />
+                                    <TableColumn fx:id="pracColumnK" prefWidth="184.0" text="pracownik" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="2.0" prefHeight="509.0" prefWidth="279.0">
+                           <children>
+                              <TextField fx:id="idFieldK" disable="true" prefHeight="41.0" prefWidth="279.0" promptText="ID">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="telFieldK" prefHeight="41.0" prefWidth="279.0" promptText="telefon">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="emailFieldK" prefHeight="41.0" prefWidth="279.0" promptText="email">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="prodFieldK" prefHeight="43.0" prefWidth="223.0" promptText="producent nazwa">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="pracFieldK" prefHeight="41.0" promptText="pracownik nazwisko">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </TextField>
+                              <Button fx:id="addStudentButton311" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addKon" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj adres producenta" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="addStudentButton3111" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#addKon2" prefHeight="25.0" prefWidth="274.0" style="-fx-background-color: rgb(127, 219, 94);" text="Dodaj adres pracownika" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#clearKonFields" style="-fx-background-color: #F6F6F6; -fx-border-color: #d8d8d8;" text="Wyczyść formularz">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="editProduktBtn311" mnemonicParsing="false" onAction="#editKon" prefHeight="25.0" prefWidth="269.0" style="-fx-background-color: #ffaf4f;" text="Edytuj" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#deleteKon" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #ff4f4f;" text="Usuń" textFill="WHITE">
+                                 <opaqueInsets>
+                                    <Insets left="10.0" right="10.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="listAllKonBtn" maxHeight="66.0" maxWidth="261.0" mnemonicParsing="false" onAction="#loadKonData" style="-fx-background-color: #4fb2ff;" text="Załaduj liste">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
